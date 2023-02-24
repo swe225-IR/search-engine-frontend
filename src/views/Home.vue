@@ -11,56 +11,56 @@
       class="flex flex-row justify-between w-full h-auto font-semibold md:p-4 md:absolute md:top-0 md:left-0"
     >
 
-      <a
-        class="text-lg hover:text-green-400"
-        href="https://github.com/sponsors/MCOfficer"
-      >
-        Support Us!
-      </a>
+<!--      <a-->
+<!--        class="text-lg hover:text-green-400"-->
+<!--        href="https://github.com/sponsors/MCOfficer"-->
+<!--      >-->
+<!--        Copyright-->
+<!--      </a>-->
 
-      <nav
-        class="flex flex-col text-lg text-right md:flex-row"
-      >
-        <div
-          v-for="(link, index) of navLinks"
-          :key="link.title"
-        >
+<!--      <nav-->
+<!--        class="flex flex-col text-lg text-right md:flex-row"-->
+<!--      >-->
+<!--&lt;!&ndash;        <div&ndash;&gt;-->
+<!--&lt;!&ndash;          v-for="(link, index) of navLinks"&ndash;&gt;-->
+<!--&lt;!&ndash;          :key="link.title"&ndash;&gt;-->
+<!--&lt;!&ndash;        >&ndash;&gt;-->
 
-          <div
-            class="pb-2"
-          >
+<!--&lt;!&ndash;          <div&ndash;&gt;-->
+<!--&lt;!&ndash;            class="pb-2"&ndash;&gt;-->
+<!--&lt;!&ndash;          >&ndash;&gt;-->
 
-            <router-link
-              :to="link.to"
-            >
+<!--&lt;!&ndash;            <router-link&ndash;&gt;-->
+<!--&lt;!&ndash;              :to="link.to"&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
 
-              <span
-                class="hover:text-green-400"
-              >
-                {{ link.title }}
-              </span>
+<!--&lt;!&ndash;              <span&ndash;&gt;-->
+<!--&lt;!&ndash;                class="hover:text-green-400"&ndash;&gt;-->
+<!--&lt;!&ndash;              >&ndash;&gt;-->
+<!--&lt;!&ndash;                {{ link.title }}&ndash;&gt;-->
+<!--&lt;!&ndash;              </span>&ndash;&gt;-->
 
-            </router-link>
-            
-            <svg
-              v-if="index != navLinks.length-1"
-              class="hidden w-4 h-4 mr-1 md:inline-block"
-              viewBox="0 0 24 24"
-            
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <circle cx="12" cy="12" r="4" />
-            </svg>
-            
-          </div>
+<!--&lt;!&ndash;            </router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;            <svg&ndash;&gt;-->
+<!--&lt;!&ndash;              v-if="index != navLinks.length-1"&ndash;&gt;-->
+<!--&lt;!&ndash;              class="hidden w-4 h-4 mr-1 md:inline-block"&ndash;&gt;-->
+<!--&lt;!&ndash;              viewBox="0 0 24 24"&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;              stroke="currentColor"&ndash;&gt;-->
+<!--&lt;!&ndash;              fill="none"&ndash;&gt;-->
+<!--&lt;!&ndash;              stroke-linecap="round"&ndash;&gt;-->
+<!--&lt;!&ndash;              stroke-linejoin="round"&ndash;&gt;-->
+<!--&lt;!&ndash;              xmlns="http://www.w3.org/2000/svg"&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
+<!--&lt;!&ndash;              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>&ndash;&gt;-->
+<!--&lt;!&ndash;              <circle cx="12" cy="12" r="4" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </svg>&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
 
-        </div>
-      </nav>
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </nav>-->
       
     </div>
 
@@ -76,12 +76,12 @@
           class="md:-mt-10"
           :showDescription="true"
         />
-
+        <!--          :placeholder="`Search ${stats.totalIndexed || `millions of`} links${isLandscape ? ` in ${stats.aliveODs || ``} open directories` : ``}...`"-->
         <SearchField
           class="w-full max-w-3xl mx-auto mt-2 mb-4 md:my-4"
           v-model="searchQuery"
           :focus="true"
-          :placeholder="`Search ${stats.totalIndexed || `millions of`} links${isLandscape ? ` in ${stats.aliveODs || ``} open directories` : ``}...`"
+          :placeholder="`Type Here`"
           @search="
             searchQuery.length > 0 ?
             $router.push({
@@ -94,11 +94,11 @@
           "
         />
 
-        <p
-          class="w-full px-2 mx-auto mb-4 text-xs italic text-center text-gray-800 sm:px-10 md:w-192 md:text-sm dark:text-gray-600"
-        >
-          Links are automatically aggregated from all over the Internet. Illegal Content might be linked, but is in no way promoted or endorsed. If you have a problem with a link, please contact the owner of the hosting website which the link points to.
-        </p>
+<!--        <p-->
+<!--          class="w-full px-2 mx-auto mb-4 text-xs italic text-center text-gray-800 sm:px-10 md:w-192 md:text-sm dark:text-gray-600"-->
+<!--        >-->
+<!--          Links are automatically aggregated from all over the Internet. Illegal Content might be linked, but is in no way promoted or endorsed. If you have a problem with a link, please contact the owner of the hosting website which the link points to.-->
+<!--        </p>-->
 
       </div>
 
@@ -135,18 +135,18 @@
                 :stroke="item.icon.color"
                 class="inline-block h-6 mr-1"
                 viewBox="0 0 24 24"
-              
+
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 xmlns="http://www.w3.org/2000/svg"
               ></svg>{{item.title}}</a>
-              
+
               <svg
                 v-if="index != poweredBy.length-1"
                 class="hidden w-4 h-4 mx-1 md:inline-block"
                 viewBox="0 0 24 24"
-              
+
                 stroke="currentColor"
                 fill="none"
                 stroke-linecap="round"
@@ -184,54 +184,58 @@ export default {
     return {
       searchQuery: ``,
       resultListBottomText: ``,
-      navLinks: [
-        {
-          title: `Contact`,
-          to: {
-            name: `Contact`,
-          }
-        },
-        {
-          title: `Download All Links`,
-          to: {
-            name: `Download`,
-          }
-        },
-      ],
+      // navLinks: [
+      //   {
+      //     title: `Contact`,
+      //     to: {
+      //       name: `Contact`,
+      //     }
+      //   },
+      //   {
+      //     title: `Download All Links`,
+      //     to: {
+      //       name: `Download`,
+      //     }
+      //   },
+      // ],
       poweredBy: [
+        // {
+        //   title: `OpenDirectoryDownloader`,
+        //   url: `https://github.com/KoalaBear84/OpenDirectoryDownloader/`,
+        // },
+        // {
+        //   title: `Elasticsearch`,
+        //   url: `https://www.elastic.co/elasticsearch/`,
+        // },
+        // {
+        //   title: `Tabler Icons`,
+        //   url: `https://tablericons.com/`,
+        //   // icon: {
+        //   //   paths: `
+        //   //     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        //   //     <path d="M8 9l3 3l-3 3" />
+        //   //     <line x1="13" y1="15" x2="16" y2="15" />
+        //   //     <rect x="4" y="4" width="16" height="16" rx="4" />
+        //   //   `,
+        //   //   color: `#318BEF`,
+        //   // },
+        // },
+        // {
+        //   title: `Netlify`,
+        //   url: `https://www.netlify.com/`,
+        // },
+        // {
+        //   title: `VueJS`,
+        //   url: `https://vuejs.org/`,
+        // },
+        // {
+        //   title: `Tailwind CSS`,
+        //   url: `https://tailwindcss.com/`,
+        // },
         {
-          title: `OpenDirectoryDownloader`,
-          url: `https://github.com/KoalaBear84/OpenDirectoryDownloader/`,
-        },
-        {
-          title: `Elasticsearch`,
-          url: `https://www.elastic.co/elasticsearch/`,
-        },
-        {
-          title: `Tabler Icons`,
-          url: `https://tablericons.com/`,
-          // icon: {
-          //   paths: `
-          //     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          //     <path d="M8 9l3 3l-3 3" />
-          //     <line x1="13" y1="15" x2="16" y2="15" />
-          //     <rect x="4" y="4" width="16" height="16" rx="4" />
-          //   `,
-          //   color: `#318BEF`,
-          // },
-        },
-        {
-          title: `Netlify`,
-          url: `https://www.netlify.com/`,
-        },
-        {
-          title: `VueJS`,
-          url: `https://vuejs.org/`,
-        },
-        {
-          title: `Tailwind CSS`,
-          url: `https://tailwindcss.com/`,
-        },
+          title: `ODCrawler`,
+          url: `https://github.com/Chaphasilor/odcrawler-frontend`,
+        }
       ],
       orientation: window.screen.orientation ? window.screen.orientation.type : `landscape-primary`,
     };
