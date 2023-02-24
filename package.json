@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "postbuild": "cd dist/netlify-functions && npm i"
+    "serve": "set NODE_OPTIONS=--openssl-legacy-provider & vue-cli-service serve",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & vue-cli-service build",
+    "lint": "set NODE_OPTIONS=--openssl-legacy-provider & vue-cli-service lint",
+    "postbuild": "set NODE_OPTIONS=--openssl-legacy-provider & cd dist/netlify-functions && npm i"
   },
   "dependencies": {
     "core-js": "^3.6.5",
