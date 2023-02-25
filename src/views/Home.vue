@@ -83,7 +83,7 @@
           :focus="true"
           :placeholder="`Type Here`"
           @search="
-            searchQuery.length > 0 ? $router.push({name: `Search`,params: {query: searchQuery}}).catch(()=>{}) : false"
+            searchQuery.length > 0 ? $router.push({name: `Search`,params: {query: searchQuery}}) : false"
         />
 
 <!--        <p-->

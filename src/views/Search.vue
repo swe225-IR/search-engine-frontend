@@ -180,33 +180,18 @@ export default {
         })
       }
 
-      // elastic search only serves the first 10k results over the regular API
-      if (this.initialPage * this.$store.getters.pageSize > 10000) {
-        this.message = {
-          text: `Sorry, but as of now we can only show you the first 10000 results. If you need more, please either use the database dump or contact us about this issue!`,
-          level: `warning`,
-          button: {
-            label: `Download Database Dump`,
-            payload: `dbDump`,
-          },
-        }
-
-        await this.$store.dispatch(`analytics/trackEvent`, `resultLimitExceeded_initial`);
-        return
-      }
-
       try {
 
         // update the query in the URL path
         if (page === 1 || this.initialPage <= 1) {
-          await this.$router.push({
+          this.$router.push({
             name: `Search`,
             params: {
               query,
             },
           })
         } else {
-          await this.$router.push({
+          this.$router.push({
             name: `Search`,
             // inline parameters
             params: {
@@ -224,11 +209,11 @@ export default {
           text: `Loading Results...`,
           level: `normal`,
         }
-        await this.$store.dispatch(`search`, {query, page});
+        this.$store.dispatch(`search`, {query, page});
         this.highestPage = page;
 
         if (this.$route.query.p && Number(this.$route.query.p) !== this.highestPage) {
-          await this.$router.push({
+          this.$router.push({
             name: `Search`,
             // inline parameters
             params: {
