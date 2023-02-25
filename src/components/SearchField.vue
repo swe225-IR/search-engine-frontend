@@ -400,23 +400,6 @@ export default {
       }
     }
   },
-  computed: {
-    advancedOptions: {
-      get() {
-        return this.$store.getters.advancedOptions;
-      },
-      // set(newOptions) {
-      //   this.$store.dispatch(`updateAdvancedOptions`, newOptions);
-      // }
-    },
-    advancedSearchActive() {
-      return Object.values(this.advancedOptions).reduce((active, currentOption) => {
-
-        return active || (typeof currentOption.value == `string` ? currentOption.value.length > 0 : currentOption.value);
-
-      }, false);
-    },
-  },
   watch: {
     focus: {
       handler: function(newFocusValue) {

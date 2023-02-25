@@ -20,26 +20,18 @@
           class="flex-shrink-0 w-auto my-1 font-bold text-center md:w-20 md:pt-2 md:pr-2 md:font-normal md:text-right"
           :ref="`page-${(id % pageSize === 0) ? calcPage(id) : `${calcPage(id)}-${id - calcPage(id)*pageSize}`}`"
         >
+<!--          {{ (id % pageSize === 0) ? `1 / 1` : ``}}-->
           {{ (id % pageSize === 0) ? `${calcPage(id)}/${Math.ceil(results.totalHits/pageSize)}${results.totalHits >= 10000 ? `+` : ``}` : ``}}
         </div>
 
 
         <LinkRow
           class="w-full p-2 pt-1 mb-3 border border-black rounded-lg md:m-0 md:p-2 dark:border-gray-700"
-          :link="link.url"
-          :highlights="link.highlights"
-          :size="link.size"
-          :meta="link.meta"
+          :link="link.data.url"
           @link-mounted="calcPage(id) === scrollToInitialPage && scrollToInitialPage > 1 ? scrollToInitialPageOnce(id) : false;"
         />
 
       </div>
-
-      <!-- <div
-        class="w-full text-lg font-bold text-center"
-      >
-        {{ bottomText }}
-      </div> -->
 
       <div
         class="flex flex-row justify-center w-full mb-2"
@@ -131,21 +123,6 @@ export default {
         console.log(`this.disableInfiniteScroll:`, this.disableInfiniteScroll);
       }
     },
-    // results: {
-    //   deep: false, 
-    //   handler: function(newResults) {
-
-    //     // console.log(`newResults:`, newResults);
-    //     // let newPage = newResults.hits.slice(-this.pageSize);
-    //     // console.log(`newPage:`, newPage);
-    //     // setTimeout(() => {
-    //     //   newPage.forEach(hit => {
-    //     //     hit.url = `test`;
-    //     //   })
-    //     // }, 5000)
-        
-    //   }
-    // }
   },
   methods: {
     smoothScrollToPage(page) {
