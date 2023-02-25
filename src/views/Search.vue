@@ -33,42 +33,32 @@
           v-model="searchQuery"
           v-observe-visibility="handleVisibilityChanged"
           :focus="false"
-          :placeholder="`Type Here`"
-          @search="search(searchQuery)"
-      />
+          :placeholder="`${results.queryTime}`"
+          @search="search(searchQuery)"/>
 
-      <!--      <div-->
-      <!--        class="flex flex-row flex-grow-0 flex-shrink-0 h-12 mt-1 ml-4 text-base md:w-2/5"-->
-      <!--      >-->
-      <!--      -->
-      <!--        <div-->
-      <!--          class="flex flex-col justify-center h-full pr-2 text-lg font-bold tracking-wider"-->
-      <!--        >-->
-      <!--          <span>TIP:</span>-->
-      <!--        </div>-->
 
-      <!--        <div-->
-      <!--          class="flex flex-row h-full overflow-hidden"-->
-      <!--        >-->
-      <!--          <transition-->
-      <!--            name="slideTips"-->
-      <!--            enter-active-class="transition-all duration-1000 transform"-->
-      <!--            enter-class="translate-x-64 opacity-0"-->
-      <!--            enter-to-class="translate-x-0 opacity-100"-->
-      <!--            leave-active-class="transition-all duration-700 transform whitespace-nowrap"-->
-      <!--            leave-class="translate-x-0 opacity-100"-->
-      <!--            leave-to-class="w-0 -translate-x-64 opacity-0"-->
-      <!--          >-->
-      <!--          <div-->
-      <!--            :key="activeTipIndex"-->
-      <!--            class="flex flex-col justify-center h-auto leading-4 break-words"-->
-      <!--          >-->
-      <!--            <span>{{ activeTip }}</span>-->
-      <!--          </div>-->
-      <!--          </transition>-->
-      <!--        </div>-->
+            <div class="flex flex-row flex-grow-0 h-12 mt-1 ml-2 text-base md:w-2/5">
+              <div class="flex flex-col justify-center h-full pr-2 text-lg font-bold tracking-wider">
+                <span>Query Time:</span>
+              </div>
+              <div class="flex flex-row h-full overflow-hidden">
+                <div class="flex flex-col justify-center h-auto leading-4 break-words">
+                  <span>{{ results.queryTime }} ms</span>
+                </div>
+              </div>
+            </div>
 
-      <!--      </div>-->
+      <div class="flex flex-row flex-grow-0 h-12 mt-1 ml-2 text-base md:w-2/5">
+        <div class="flex flex-col justify-center h-full pr-2 text-lg font-bold tracking-wider">
+          <span>Total Items:</span>
+        </div>
+        <div class="flex flex-row h-full overflow-hidden">
+          <div class="flex flex-col justify-center h-auto leading-4 break-words">
+            <span>{{ results.totalHits }} web pages</span>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
@@ -151,9 +141,6 @@ export default {
     },
     stats: function () {
       return this.$store.getters.stats;
-    },
-    isIndexing: function () {
-      return this.stats.isIndexing;
     },
     pageSize: function () {
       return this.$store.getters.pageSize;
