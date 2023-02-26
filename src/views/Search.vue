@@ -43,7 +43,7 @@
               </div>
               <div class="flex flex-row h-full overflow-hidden">
                 <div class="flex flex-col justify-center h-auto leading-4 break-words">
-                  <span>{{ results.queryTime }} ms</span>
+                  <span>{{ results.queryTime }} s</span>
                 </div>
               </div>
             </div>
